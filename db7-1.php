@@ -11,15 +11,13 @@ $stmt->bindParam(3, $_POST["name"]);
 $stmt->bindParam(4, $_POST["address"]);
 $stmt->bindParam(5, $_POST["mobile"]);
 $stmt->bindParam(6, $_POST["email"]);
-$stmt->execute(); 
-
-$pid = $pdo->lastInsertId(); 
-
+$stmt->execute();
+$username = $pdo->lastInsertId();
 ?>
 
 <html>
     <head><meta charset="UTF-8"></head>
     <body>
-    <h5> เพิ่มชื่อใหม่สำเร็จ username คือ <?php $username?> </h5>
+    <h5> เพิ่มชื่อใหม่สำเร็จ username คือ <?=$username?> </h5>
     </body>
 </html>
